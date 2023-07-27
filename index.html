@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODO List App</title>
+  <!-- Add your CSS stylesheets here -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="center-align heading">TODO App</h1>
+
+  <!-- this container div will hold the whole todo list -->
+  <div id="container">
+    <form action="/add-task" method="POST">
+      <!-- div for adding description of the task -->
+      <div class="card">
+        <!-- <div class="card-body"> -->
+        <label class="card-subtitle mb-2 text-muted">DESCRIPTION</label>
+        <textarea class="form-control" name="desc" placeholder="What do you need to do?" required></textarea>
+        <!-- </div> -->
+      </div>
+
+      <!-- this div is for category and due-date heading -->
+      <div>
+        <div class="category-card">
+          <label for="category">CATEGORY</label>
+          <select id="category">
+            <option value="Choose a category">Choose a category</option>
+            <option value="Personal">Personal</option>
+            <option value="Work">Work</option>
+            <option value="School">School</option>
+            <option value="Cleaning">Cleaning</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="due-date-card">
+          <div>
+            <label for="due date">DUE DATE</label>
+
+            <div class="due-date-card">
+              <input type="date" name="date" required>
+            </div>
+          </div>
+          </select>
+        </div>
+      </div>
+
+      <!-- this div is for drop-down list of category and due date input -->
+      
+      <div class="action-button-container">
+        <button type="submit" class="btn btn-success btn-lg">
+          <i class="fas fa-plus"></i> Add Task
+        </button>
+      </div>
+    </form>
+
+    <form action="/delete-task" method="get" class="aform">
+      <button class="btn btn-danger btn-lg" type="submit">
+        <i class="fas fa-trash-alt"></i> Delete Task
+      </button>
+    </form>
+
+    <div class="card task-card">
+      <div class="tick-box">
+        <input type="checkbox" class="select-task" id="checkbox" name="<%= i._id%>">
+        <div class="card-body task-body">
+          <h5 class="card-title">Let's make a TODO App</h5>
+          <p class="text-muted"></p>
+          <p class="text-muted"><i class="far fa-calendar-alt"></i> Due-Date</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card task-card">
+      <div class="tick-box">
+        <input type="checkbox" class="select-task" id="checkbox" name="<%= i._id%>">
+        <div class="card-body task-body">
+          <h5 class="card-title">Let's make a TODO App</h5>
+          <p class="text-muted"></p>
+          <p class="text-muted"><i class="far fa-calendar-alt"></i> Due-Date</p>
+        </div>
+        <div class="tag-box">
+          <h4><span class="badge badge-secondary">SCHOOL</span></h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="card task-card">
+      <div class="tick-box">
+        <input type="checkbox" class="select-task" id="checkbox" name="<%= i._id%>">
+        <div class="card-body task-body">
+          <h5 class="card-title">Annual report submission deadline</h5>
+          <p class="text-muted"></p>
+          <p class="text-muted"><i class="far fa-calendar-alt"></i> Due-Date</p>
+        </div>
+        <div class="tag-box">
+          <h4><span class="badge badge-secondary">WORK</span></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
